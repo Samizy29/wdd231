@@ -2,6 +2,13 @@
   Base Styles – Mobile First
 ================================ */
 
+/* Apply border-box to all elements for easier sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Set a default font and background for body */
 body {
   font-family: 'Arial', sans-serif;
@@ -136,23 +143,23 @@ section {
 }
 
 /* -------------------------
-  FOOTER
-------------------------- */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #ccc;
-  margin-top: 2rem;
-}
+    FOOTER
+  ------------------------- */
 
-/* Social media links */
-footer .socials a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #0077cc;
-}
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
 
-footer .socials a:hover {
-  text-decoration: underline;
-}
+  .socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .filters {
+    justify-content: center;
+  }

@@ -78,9 +78,7 @@ button {
   cursor: pointer;
 }
 
-/**
- * Set consistent vertical rhythm
- */
+/* Set consistent vertical rhythm */
 p {
   margin-bottom: 1rem;
 }

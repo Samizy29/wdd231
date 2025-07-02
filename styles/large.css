@@ -3,6 +3,13 @@
   Triggered at 768px and above
 ================================ */
 
+/* Ensure consistent box sizing across browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 768px) {
 
   /* -------------------------
@@ -99,6 +106,9 @@
   }
 
   .socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 0.5rem;
   }
 
