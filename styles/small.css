@@ -76,6 +76,11 @@ nav a:focus {
   border-left-color: #f5f5f5;
 }
 
+nav a.active {
+  background-color: #111;
+  border-left: 4px solid #fff;
+}
+
 /* -------------------------
   MAIN CONTENT
 ------------------------- */
@@ -99,6 +104,7 @@ section {
 /* Filter buttons for course section */
 .filters {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
   flex-wrap: wrap;
