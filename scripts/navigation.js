@@ -1,17 +1,17 @@
-// Get references to the menu button and navigation list
+// Get the button and nav list
 const menuButton = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 
-// Toggle navigation menu open/close on click
+// Toggle menu visibility and icon
 menuButton.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 
-  // Change icon and aria label based on state
+  // Toggle icon and accessibility label
   if (navLinks.classList.contains('open')) {
-    menuButton.innerHTML = '&#10006;'; // ✖ close icon
+    menuButton.innerHTML = '&#10006;'; // ✖ close
     menuButton.setAttribute('aria-label', 'Close Navigation');
   } else {
-    menuButton.innerHTML = '&#9776;'; // ☰ hamburger icon
+    menuButton.innerHTML = '&#9776;'; // ☰ hamburger
     menuButton.setAttribute('aria-label', 'Open Navigation');
   }
 });
