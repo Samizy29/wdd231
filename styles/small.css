@@ -1,61 +1,153 @@
+/* ================================
+  Base Styles – Mobile First
+================================ */
+
+/* Set a default font and background for body */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #111;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
-header, nav, main, footer {
-  padding: 1rem;
+/* Structure spacing for page sections */
+header,
+nav,
+main,
+footer {
+  max-width: 960px;
+  margin: auto;
 }
 
+/* -------------------------
+  HEADER
+------------------------- */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 2px solid #222;
 }
 
-header img {
-  width: 40px;
+/* Hamburger button */
+#menuBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
 }
 
-nav {
-  display: none;
+/* -------------------------
+  NAVIGATION
+------------------------- */
+nav ul {
+  display: none; /* Hidden by default */
   flex-direction: column;
-  background-color: #444;
+  background-color: #000;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem;
-  display: block;
-}
-
-nav.show {
+/* Show menu when open class is added by JS */
+nav ul.open {
   display: flex;
 }
 
-.filter-buttons button {
-  margin: 0.25rem;
-  padding: 0.5rem 1rem;
+/* Remove bullet points */
+nav li {
+  list-style: none;
 }
 
-#courses {
-  display: grid;
-  gap: 1rem;
+/* Nav link styles */
+nav a {
+  display: block;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  border-left: 5px solid transparent;
+}
+
+/* Hover and focus style for nav links */
+nav a:hover,
+nav a:focus {
+  background-color: #222;
+  border-left-color: #f5f5f5; /* subtle contrast border */
+}
+
+/* -------------------------
+  MAIN CONTENT
+------------------------- */
+
+/* Center page title */
+main h1 {
+  text-align: center;
   margin-top: 1rem;
+  font-size: 1.8rem;
 }
 
-.course-card {
+/* General section style */
+section {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Filter buttons for course section */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+/* Buttons for filtering */
+.filters button {
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Card styles for courses (added by JS) */
+.card {
   border: 1px solid #ccc;
   padding: 1rem;
-  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+  border-radius: 4px;
 }
 
-.completed {
+/* Completed course styling */
+.card.completed {
   background-color: #d4edda;
-  border-color: #28a745;
+  border-color: #c3e6cb;
+}
+
+/* -------------------------
+  FOOTER
+------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+}
+
+/* Social media links */
+footer .socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077cc;
+}
+
+footer .socials a:hover {
+  text-decoration: underline;
 }

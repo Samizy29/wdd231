@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD231 Course Home Page">
-  <meta name="author" content="Samuel Oni">
-  <title>WDD231 | Course Home Page</title>
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/date.js" defer></script>
-  <script src="scripts/course.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD 231 - Course Home Page" />
+  <meta name="author" content="Samuel Oni" />
+  <title>Home | WDD 231</title>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
 </head>
 <body>
   <header>
-    <img src="images/logo.svg" alt="Site Logo">
+    <img src="images/logo.svg" alt="Site Logo" width="40" />
     <span>Samuel Oni</span>
-    <button id="menu" aria-label="Toggle Navigation">☰</button>
+    <button id="menuBtn" aria-label="Open Navigation">&#9776;</button>
   </header>
 
-  <nav class="navigation">
-    <a href="index.html">Home</a>
-    <a href="#">Chamber</a>
-    <a href="#">Final</a>
+  <nav>
+    <ul id="navLinks" class="closed">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chamber.html">Chamber Project</a></li>
+      <li><a href="final.html">Final Project</a></li>
+    </ul>
   </nav>
 
   <main>
     <h1>Home</h1>
 
     <section>
-      <h2>About</h2>
-      <p>This is the course homepage for WDD231.</p>
+      <h2>About Me</h2>
+      <p>Massas facilisis per purus sit imperdiet. Et fames lorem mi phasellus congue nascetur enim consectetur sociolique natoque risus. Odio vehicula libero iaculis net vivamus augue commodo pretium vivamus ad duis magna. Quam fringilla convallis ridiculus malesuada accumsan potenti magnís volutpat nulla ipsum. Dis maecenas et praesent class fringilla.</p>
     </section>
 
     <section>
-      <h2>Courses</h2>
-      <div class="filter-buttons">
-        <button id="all">All Courses</button>
-        <button id="wdd">WDD Courses</button>
-        <button id="cse">CSE Courses</button>
+      <h2>Student Photo</h2>
+      <img src="images/profile.jpeg" alt="Student Photo" width="200" style="border-radius: 5px; max-width: 100%; height: auto;" />
+    </section>
+
+    <section>
+      <h2>Web Certificate Courses</h2>
+      <div class="filters">
+        <button id="allBtn">All</button>
+        <button id="cseBtn">CSE</button>
+        <button id="wddBtn">WDD</button>
       </div>
-      <div id="courses"></div>
-      <p>Total Credits: <span id="creditTotal">0</span></p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Contact me on GitHub or LinkedIn.</p>
+      <div id="courseCards"></div>
+      <p id="totalCredits"></p>
     </section>
   </main>
 
   <footer>
+    <div class="socials">
+      <a href="https://github.com/onisamuel73" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/onisamuel73" target="_blank">LinkedIn</a>
+    </div>
     <p>
-      &copy; <span id="currentyear"></span> | Samuel Oni | Nigeria |
-      <a href="https://github.com/Samizy29" target="_blank">GitHub</a> |
-      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      &copy; <span id="currentyear"></span> - Samuel Oni | Lagos, Nigeria
     </p>
     <p id="lastModified"></p>
   </footer>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </body>
 </html>
