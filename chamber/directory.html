@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chamber Directory</title>
+  <meta name="description" content="Chamber of Commerce Directory Page" />
+  <meta name="author" content="Samuel Oni" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Social Media Meta Tags (Open Graph) -->
+  <meta property="og:title" content="Chamber of Commerce Directory" />
+  <meta property="og:description" content="Find members of the Chamber of Commerce in our community." />
+  <meta property="og:image" content="images/chamber-og-image.png" />
+  <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../styles/normalize.css" />
+  <link rel="stylesheet" href="../styles/small.css" />
+  <link rel="stylesheet" href="../styles/large.css" />
+</head>
+<body>
+  <header>
+    <h1>Chamber of Commerce Directory</h1>
+  </header>
+
+  <nav aria-label="View toggle navigation">
+    <section class="view-toggle" role="group" aria-label="Toggle directory view">
+      <button id="gridView" aria-pressed="true" aria-label="Grid view">Grid View</button>
+      <button id="listView" aria-pressed="false" aria-label="List view">List View</button>
+    </section>
+  </nav>
+
+  <main>
+    <section id="directory" class="grid-view" aria-live="polite" aria-relevant="additions removals">
+      <!-- Member cards will be inserted here dynamically -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Samuel Oni | WDD 231 | &copy; <span id="currentyear"></span></p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../scripts/directory.js" defer></script>
+  <script src="../scripts/date.js" defer></script>
+</body>
+</html>

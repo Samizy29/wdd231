@@ -1,0 +1,94 @@
+/* ================================ 
+  Base styles — Mobile first 
+================================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #111;
+  padding: 1rem;
+  margin: 0;
+}
+
+/* Container for member cards */
+#directory {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* Grid View */
+#directory.grid-view {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* List View */
+#directory.list-view {
+  display: block;
+}
+
+/* Member cards */
+.member-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Member images */
+.member-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+/* List view styles */
+#directory.list-view .member-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#directory.list-view .member-card img {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+#directory.list-view .member-card h3,
+#directory.list-view .member-card p {
+  margin: 0.25rem 0;
+}
+
+/* View toggle buttons */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.view-toggle button {
+  padding: 0.5rem 1.25rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-toggle button:hover,
+.view-toggle button:focus-visible {
+  background-color: #555;
+  outline: none;
+  outline-offset: 2px;
+  outline: 3px solid #007acc;
+}
+
+.view-toggle button.active {
+  background-color: #007acc;
+  box-shadow: 0 0 8px rgba(0, 122, 204, 0.7);
+}
