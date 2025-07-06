@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Timbuktu Bakery",
+        "address": "123 Main Street",
+        "phone": "(123) 456-7890",
+        "website": "https://timbuktubakery.com",
+        "image": "bakery.jpg",
+        "membershipLevel": 3,
+        "description": "Family-owned since 1992"
+    },
+    {
+        "name": "Desert Oasis Hotel",
+        "address": "45 Palm Avenue",
+        "phone": "(123) 555-1212",
+        "website": "https://desertoasis.com",
+        "image": "hotel.jpg",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Sahara Trading Co.",
+        "address": "78 Market Square",
+        "phone": "(123) 789-4560",
+        "website": "https://saharatrading.com",
+        "image": "trading.jpg",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Golden Camel Tours",
+        "address": "9 Adventure Lane",
+        "phone": "(123) 333-4444",
+        "website": "https://goldencameltours.com",
+        "image": "tours.jpg",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Timbuktu Tech Solutions",
+        "address": "36 Innovation Drive",
+        "phone": "(123) 222-3333",
+        "website": "https://timbuktutech.com",
+        "image": "tech.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Nile River Restaurant",
+        "address": "12 Oasis Road",
+        "phone": "(123) 777-8888",
+        "website": "https://nileriverdining.com",
+        "image": "restaurant.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Sand Dune Construction",
+        "address": "55 Builder's Way",
+        "phone": "(123) 999-0000",
+        "website": "https://sandduneconstruction.com",
+        "image": "construction.jpg",
+        "membershipLevel": 2
+    }
+]

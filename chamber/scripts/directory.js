@@ -1,53 +1,79 @@
-// Select DOM elements
-const directorySection = document.getElementById('directory');
-const gridBtn = document.getElementById('gridView');
-const listBtn = document.getElementById('listView');
+document.addEventListener('DOMContentLoaded', async function() {
+    // Navigation
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('nav ul');
+    
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
 
-// Fetch and render members
-async function fetchMembers() {
-  try {
-    const response = await fetch('../data/members.json');
-    if (!response.ok) throw new Error('Failed to load member data');
-    const members = await response.json();
-    renderMembers(members);
-  } catch (error) {
-    directorySection.textContent = 'Error loading member data.';
-    console.error(error);
-  }
-}
+    // Load members
+    async function getMembers() {
+        try {
+            const response = await fetch('data/members.json');
+            if (!response.ok) throw new Error('Network response was not ok');
+            return await response.json();
+        } catch (error) {
+            console.error('Error loading members:', error);
+            return [];
+        }
+    }
 
-// Render members on the page
-function renderMembers(members) {
-  directorySection.innerHTML = ''; // Clear existing content
+    // Display members
+    function displayMembers(members, viewType) {
+        const container = document.getElementById('member-container');
+        container.className = viewType + '-view';
+        container.innerHTML = '';
 
-  members.forEach(member => {
-    const card = document.createElement('article');
-    card.classList.add('member-card');
+        members.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'member-card';
+            
+            let membershipLevel;
+            switch(member.membershipLevel) {
+                case 3: membershipLevel = 'Gold Member'; break;
+                case 2: membershipLevel = 'Silver Member'; break;
+                default: membershipLevel = 'Member';
+            }
 
-    card.innerHTML = `
-      <img src="../images/${member.image}" alt="${member.name} logo" loading="lazy" />
-      <h3>${member.name}</h3>
-      <p><strong>Address:</strong> ${member.address}</p>
-      <p><strong>Phone:</strong> ${member.phone}</p>
-      <p><strong>Website:</strong> <a href="${member.website}" target="_blank" rel="noopener">${member.website}</a></p>
-      <p>${member.description}</p>
-      <p><strong>Membership Level:</strong> ${member.membership.charAt(0).toUpperCase() + member.membership.slice(1)}</p>
-    `;
+            card.innerHTML = `
+                ${viewType === 'grid' ? `<img src="images/members/${member.image}" alt="${member.name}" loading="lazy">` : ''}
+                <h2>${member.name}</h2>
+                <span class="membership-level">${membershipLevel}</span>
+                <p>${member.address}</p>
+                <p>📞 ${member.phone}</p>
+                <a href="${member.website}" target="_blank">Website</a>
+                ${member.description ? `<p>${member.description}</p>` : ''}
+            `;
+            
+            container.appendChild(card);
+        });
+    }
 
-    directorySection.appendChild(card);
-  });
-}
+    // View toggle
+    const gridBtn = document.getElementById('grid-view');
+    const listBtn = document.getElementById('list-view');
+    
+    gridBtn.addEventListener('click', () => {
+        gridBtn.setAttribute('aria-pressed', 'true');
+        listBtn.setAttribute('aria-pressed', 'false');
+        displayMembers(members, 'grid');
+        localStorage.setItem('directoryView', 'grid');
+    });
+    
+    listBtn.addEventListener('click', () => {
+        listBtn.setAttribute('aria-pressed', 'true');
+        gridBtn.setAttribute('aria-pressed', 'false');
+        displayMembers(members, 'list');
+        localStorage.setItem('directoryView', 'list');
+    });
 
-// Event listeners for toggle buttons
-gridBtn.addEventListener('click', () => {
-  directorySection.classList.remove('list-view');
-  directorySection.classList.add('grid-view');
+    // Initialize
+    const members = await getMembers();
+    const savedView = localStorage.getItem('directoryView') || 'grid';
+    document.getElementById(savedView + '-view').click();
+
+    // Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent += document.lastModified;
 });
-
-listBtn.addEventListener('click', () => {
-  directorySection.classList.remove('grid-view');
-  directorySection.classList.add('list-view');
-});
-
-// Initial fetch on page load
-window.addEventListener('load', fetchMembers);
