@@ -1,0 +1,33 @@
+/* Dark mode variables */
+:root:not([data-theme="light"]) {
+    --primary-dark: #3a7bb8;
+    --secondary-dark: #f8c537;
+    --background-dark: #1a1a2e;
+    --text-dark: #e6e6e6;
+    --card-bg-dark: #16213e;
+    --border-dark: #2d3748;
+}
+
+/* Applied dark mode styles */
+[data-theme="dark"] {
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --background: var(--background-dark);
+    --text: var(--text-dark);
+    --card-bg: var(--card-bg-dark);
+    --border: var(--border-dark);
+}
+
+[data-theme="dark"] .hero-image img {
+    filter: brightness(0.8);
+}
+
+[data-theme="dark"] .time,
+[data-theme="dark"] .location,
+[data-theme="dark"] .description {
+    color: #b3b3b3;
+}
+
+[data-theme="dark"] .register-btn {
+    color: #1a1a2e;
+}
