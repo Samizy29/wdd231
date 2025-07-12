@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory of local businesses in our community">
+    <meta name="author" content="Samuel Oni">
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="Chamber of Commerce - Business Directory">
+    <meta property="og:description" content="Explore local businesses in our community">
+    <meta property="og:image" content="https://Samizy29.github.io/wdd231/chamber/images/logo.png">
+    <meta property="og:url" content="https://Samizy29.github.io/wdd231/chamber/directory.html">
+    
+    <title>Chamber of Commerce - Directory</title>
+    <link rel="icon" href="images/value.png" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/house-door-fill.svg" alt="Chamber Logo">
+            <h1>Nigeria Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <button id="hamburger">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li class="active"><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Business Directory</h2>
+        <div class="view-toggle">
+            <button id="grid-view" class="active">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <div id="directory" class="grid"></div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <h3>NIgeria Chamber of Commerce</h3>
+            <p>123 Main Street, Nigeria, ST 12345</p>
+            <p>info@Nigeriachamber.org</p>
+            <p>(555) 123-4567</p>
+        </div>
+        <div class="dev-info">
+            <p>&copy;<span id="year"></span> Nigeria Chamber</p>
+            <p>Samuel Oni</p>
+            <p>WDD 231 Project</p>
+            <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/directory.js"></script>
+</body>
+</html>
