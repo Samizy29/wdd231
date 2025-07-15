@@ -332,3 +332,147 @@ footer {
     border-radius: 4px;
     text-align: center;
 }
+
+/* Additional style for home page */
+/* Home Page Specific Styles */
+.hero {
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.hero h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* Events Section */
+.events {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.event-card {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--background-color);
+}
+
+/* Weather Section */
+.weather {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.forecast-day {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 5px;
+}
+
+/* Spotlights Section */
+.spotlights {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.spotlight-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.spotlight-card {
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.spotlight-card img {
+    max-width: 150px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        width: 90%;
+    }
+    
+    .forecast {
+        grid-template-columns: 1fr;
+    }
+    
+    .spotlight-container {
+        grid-template-columns: 1fr;
+    }
+}

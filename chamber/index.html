@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nigeria Chamber of Commerce - Promoting local business growth and community development">
+    <title>Nigeria Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="icon" href="images/value.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/house-door-fill.svg" alt="Chamber Logo" width="60" height="60">
+            <h1>Nigeria Chamber of Commerce</h1>
+        </div>
+        <button id="hamburger">☰</button>
+        <nav>
+            <ul id="menu">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/hero-small.webp">
+                <source media="(min-width: 601px)" srcset="images/hero-large.webp">
+                <img src="images/Sunrise Bakery.avif" alt="Nigeria cityscape" loading="lazy">
+            </picture>
+            <div class="hero-content">
+                <h2>Welcome to Nigeria</h2>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Current Events -->
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-card">
+                <h3>Business Networking Mixer</h3>
+                <p>June 15, 2023 | 5:30 PM</p>
+                <p>Nigeria Convention Center</p>
+            </div>
+            <div class="event-card">
+                <h3>Small Business Workshop</h3>
+                <p>June 22, 2023 | 10:00 AM</p>
+                <p>Online via Zoom</p>
+            </div>
+        </section>
+
+        <!-- Weather Widget -->
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div class="current-weather">
+                <img id="weather-icon" src="" alt="" loading="lazy">
+                <p><span id="current-temp"></span>°F</p>
+                <p id="weather-desc"></p>
+            </div>
+            <div class="forecast" id="forecast"></div>
+        </section>
+
+        <!-- Member Spotlights -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <div class="spotlight-container" id="spotlights"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Nigeria Chamber of Commerce</p>
+            <p>123 Main Street, Nigeria, ML 12345</p>
+            <p>info@Nigeriachamber.org</p>
+            <p>(555) 123-4567</p>
+        </div>
+        <div class="dev-info">
+            <p>&copy; <span id="year"></span> Nigeria Chamber</p>
+            <p>Samuel Oni</p>
+            <p>WDD 230 Project</p>
+            <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/spotlights.js"></script>
+</body>
+</html>
