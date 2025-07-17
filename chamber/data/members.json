@@ -4,7 +4,7 @@
         "address": "123 Main Street",
         "phone": "(555) 123-4567",
         "url": "https://sunrisebakery.com",
-        "image": "chamber/images/Sunrise Bakery.avif",
+        "image": "../images/Sunrise Bakery.avif",
         "membership": 3
     },
     {
@@ -12,7 +12,7 @@
         "address": "456 Elm Avenue",
         "phone": "(555) 234-5678",
         "url": "https://downtowncafe.com",
-        "image": "cafe.jpg",
+        "image": "../images/Downtown Cafe.avif",
         "membership": 2
     },
     {
@@ -20,7 +20,7 @@
         "address": "789 Oak Road",
         "phone": "(555) 345-6789",
         "url": "https://cityhardware.com",
-        "image": "hardware.jpg",
+        "image": "../images/city hardware.jpg",
         "membership": 1
     },
     {
@@ -28,7 +28,7 @@
         "address": "101 Park Lane",
         "phone": "(555) 456-7890",
         "url": "https://grandhotel.com",
-        "image": "hotel.jpg",
+        "image": "../images/Grand Hotel.avif",
         "membership": 3
     },
     {
@@ -36,7 +36,7 @@
         "address": "202 Maple Drive",
         "phone": "(555) 567-8901",
         "url": "https://villagepharmacy.com",
-        "image": "pharmacy.jpg",
+        "image": "../images/village pharmacy.jpg",
         "membership": 1
     },
     {
@@ -44,7 +44,7 @@
         "address": "303 Pine Street",
         "phone": "(555) 678-9012",
         "url": "https://stylesalon.com",
-        "image": "salon.jpg",
+        "image": "../images/Style salon.jpg",
         "membership": 2
     },
     {
@@ -52,7 +52,7 @@
         "address": "404 Cedar Boulevard",
         "phone": "(555) 789-0123",
         "url": "https://freshmarket.com",
-        "image": "supermarket.jpg",
+        "image": "../images/Fresh Market.avif",
         "membership": 3
     }
 ]
