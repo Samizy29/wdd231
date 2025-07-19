@@ -1,4 +1,4 @@
-import { cleanUrl, getRandomSubset } from './utils.js';
+import { cleanUrl, getRandomSubset } from '../scripts/utils.js';
 
 // Main spotlight functionality
 document.addEventListener('DOMContentLoaded', async () => {
