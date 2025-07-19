@@ -426,13 +426,12 @@ footer {
     background-color: var(--background-color);
 }
 
-/* Weather Section */
+/* weather */
 .weather {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
+    background-color: var(--background-color);
+    padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 1rem 0;
 }
 
 .current-weather {
@@ -442,64 +441,112 @@ footer {
     margin-bottom: 1rem;
 }
 
-#weather-icon {
-    width: 50px;
-    height: 50px;
-}
-
-.forecast {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.forecast-days {
+    display: flex;
+    justify-content: space-around;
     gap: 1rem;
 }
 
 .forecast-day {
     text-align: center;
     padding: 0.5rem;
-    background-color: var(--background-color);
+    background-color: #e6f2ff;
     border-radius: 5px;
 }
 
-/* Spotlights Section */
-.spotlights {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.forecast-day img {
+    width: 50px;
+    height: 50px;
 }
 
+/* Spotlights Section */
+/* Spotlight Styles */
 .spotlight-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .spotlight-card {
-    padding: 1rem;
-    background-color: var(--background-color);
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .spotlight-card img {
-    max-width: 150px;
-    max-height: 100px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-content {
-        width: 90%;
-    }
-    
-    .forecast {
-        grid-template-columns: 1fr;
-    }
-    
-    .spotlight-container {
-        grid-template-columns: 1fr;
-    }
+.spotlight-card h2 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.spotlight-card p {
+    margin: 8px 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.spotlight-card a {
+    color: #3498db;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.spotlight-card a:hover {
+    text-decoration: underline;
+}
+
+.membership-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.gold {
+    background-color: #ffd700;
+    color: #333;
+}
+
+.silver {
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+/* Error State */
+.error-message {
+    text-align: center;
+    padding: 40px;
+    color: #e74c3c;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
 }

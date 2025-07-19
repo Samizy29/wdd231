@@ -1,83 +1,63 @@
-// API Key - Replace with your actual OpenWeatherMap API key
-const apiKey = 'your_api_key_here';
-const city = 'Timbuktu';
-const units = 'imperial'; // For Fahrenheit
+// scripts/weather.js
+const apiKey = '4226f696ce953a56f708e147d19f7104'; // Get from OpenWeatherMap
+const city = 'Nigeria'; // Or specific city in Nigeria
+const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
 // DOM Elements
-const currentTemp = document.querySelector('#current-temp');
-const weatherIcon = document.querySelector('#weather-icon');
-const weatherDesc = document.querySelector('#weather-desc');
-const forecastDiv = document.querySelector('#forecast');
+const currentTemp = document.getElementById('current-temp');
+const weatherDesc = document.getElementById('weather-desc');
+const weatherIcon = document.getElementById('weather-icon');
+const forecastDiv = document.getElementById('forecast');
 
-// Fetch Weather Data
-async function getWeather() {
+async function fetchWeather() {
     try {
-        // Current Weather
-        const currentResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`
-        );
-        const currentData = await currentResponse.json();
-        
-        // 3-Day Forecast
-        const forecastResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`
-        );
-        const forecastData = await forecastResponse.json();
-        
-        displayWeather(currentData, forecastData);
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            displayWeather(data);
+        } else {
+            throw Error(await response.text());
+        }
     } catch (error) {
-        console.error('Error fetching weather data:', error);
+        console.error('Weather fetch error:', error);
         displayError();
     }
 }
 
-// Display Weather Data
-function displayWeather(currentData, forecastData) {
-    // Current Weather
-    currentTemp.textContent = Math.round(currentData.main.temp);
-    weatherDesc.textContent = currentData.weather[0].description;
-    weatherIcon.src = `https://openweathermap.org/img/wn/${currentData.weather[0].icon}.png`;
-    weatherIcon.alt = currentData.weather[0].description;
+function displayWeather(data) {
+    // Current weather
+    const current = data.list[0];
+    currentTemp.textContent = Math.round(current.main.temp);
+    weatherDesc.textContent = current.weather[0].description;
+    weatherIcon.src = `https://openweathermap.org/img/wn/${current.weather[0].icon}.png`;
+    weatherIcon.alt = current.weather[0].description;
+
+    // 3-day forecast
+    forecastDiv.innerHTML = '<h3>3-Day Forecast</h3>';
+    const forecastContainer = document.createElement('div');
+    forecastContainer.className = 'forecast-days';
     
-    // 3-Day Forecast
-    forecastDiv.innerHTML = '';
-    const dailyForecasts = getDailyForecasts(forecastData.list);
-    
-    dailyForecasts.slice(0, 3).forEach(day => {
+    // Get forecasts for noon each day (every 8th item in the array)
+    for (let i = 1; i <= 3; i++) {
+        const forecast = data.list[i * 8];
         const dayDiv = document.createElement('div');
         dayDiv.className = 'forecast-day';
-        
-        const date = new Date(day.dt * 1000);
-        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
-        
         dayDiv.innerHTML = `
-            <p><strong>${dayName}</strong></p>
-            <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="${day.weather[0].description}">
-            <p>${Math.round(day.main.temp)}°F</p>
+            <p>Day ${i}</p>
+            <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" 
+                 alt="${forecast.weather[0].description}">
+            <p>${Math.round(forecast.main.temp)}°F</p>
         `;
-        
-        forecastDiv.appendChild(dayDiv);
-    });
+        forecastContainer.appendChild(dayDiv);
+    }
+    forecastDiv.appendChild(forecastContainer);
 }
 
-// Helper function to get one forecast per day
-function getDailyForecasts(forecastList) {
-    const forecastsByDay = {};
-    
-    forecastList.forEach(item => {
-        const date = new Date(item.dt * 1000).toLocaleDateString();
-        if (!forecastsByDay[date] || item.dt_txt.includes('12:00:00')) {
-            forecastsByDay[date] = item;
-        }
-    });
-    
-    return Object.values(forecastsByDay);
-}
-
-// Error Handling
 function displayError() {
-    forecastDiv.innerHTML = '<p class="error">Unable to load weather data. Please try again later.</p>';
+    currentTemp.textContent = '--';
+    weatherDesc.textContent = 'Weather data unavailable';
+    forecastDiv.innerHTML = '<p>Forecast not available</p>';
 }
 
-// Initialize
-getWeather();
+// Initialize weather on page load
+document.addEventListener('DOMContentLoaded', fetchWeather);
