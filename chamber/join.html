@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Nigeria Chamber of Commerce">
+    <title>Join | Nigeria Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="icon" href="images/value.png">
+    <!-- Social Media Meta -->
+    <meta property="og:title" content="Join Nigeria Chamber of Commerce">
+    <meta property="og:description" content="Grow your business with our membership">
+    <meta property="og:image" content="https://yoursite.com/images/join-preview.jpg">
+    <meta property="og:url" content="https://yoursite.com/join.html">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/house-door-fill.svg" alt="Chamber Logo" width="50" height="50">
+            <h1>Nigeria Chamber of Commerce</h1>
+        </div>
+        <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="nav-menu">
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li class="active"><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-container">
+        <h1>Become a Member</h1>
+        
+        <div class="join-content">
+            <!-- Application Form -->
+            <form id="membershipForm" method="get" action="thankyou.html" class="join-form">
+                <input type="hidden" id="timestamp" name="timestamp">
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label>
+                        First Name*
+                        <input type="text" name="firstName" required 
+                              autocomplete="given-name" title="Enter your first name">
+                        <span class="error-message">Please enter your first name</span>
+                    </label>
+                    <label>
+                        Last Name*
+                        <input type="text" name="lastName" required 
+                              autocomplete="family-name" title="Enter your last name">
+                        <span class="error-message">Please enter your last name</span>
+                    </label>
+                    <label>
+                        Title
+                        <input type="text" name="title" 
+                              autocomplete="organization-title" 
+                              pattern="[a-zA-Z \-]{7,}" 
+                              title="7+ letters, hyphens or spaces only">
+                        <span class="error-message">Must be 7+ letters (hyphens/spaces allowed)</span>
+                    </label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>
+                        Email*
+                        <input type="email" name="email" required 
+                              autocomplete="email" placeholder="example@domain.com" 
+                              title="Enter a valid email address">
+                        <span class="error-message">Please enter a valid email</span>
+                    </label>
+                    <label>
+                        Mobile Phone*
+                        <input type="tel" name="phone" required 
+                              autocomplete="tel" title="Enter your phone number">
+                        <span class="error-message">Please enter your phone number</span>
+                    </label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Business Information</legend>
+                    <label>
+                        Business Name*
+                        <input type="text" name="business" required 
+                              autocomplete="organization" title="Enter your business name">
+                        <span class="error-message">Please enter your business name</span>
+                    </label>
+                    <label>
+                        Membership Level*
+                        <select name="membership" required title="Select membership level">
+                            <option value="">-- Select Level --</option>
+                            <option value="np">NP Membership (Non-Profit, Free)</option>
+                            <option value="bronze">Bronze Membership ($200/year)</option>
+                            <option value="silver">Silver Membership ($400/year)</option>
+                            <option value="gold">Gold Membership ($600/year)</option>
+                        </select>
+                        <span class="error-message">Please select a membership level</span>
+                    </label>
+                    <label>
+                        Business Description
+                        <textarea name="description" title="Describe your business"></textarea>
+                    </label>
+                </fieldset>
+                
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+            
+            <!-- Membership Benefits -->
+            <section class="membership-benefits">
+                <h2>Membership Levels</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card np">
+                        <h3>NP Membership</h3>
+                        <p>Free for Non-Profit Organizations</p>
+                        <button class="btn-benefit" data-level="np">View Benefits</button>
+                    </div>
+                    <div class="benefit-card bronze">
+                        <h3>Bronze</h3>
+                        <p>$200/year</p>
+                        <button class="btn-benefit" data-level="bronze">View Benefits</button>
+                    </div>
+                    <div class="benefit-card silver">
+                        <h3>Silver</h3>
+                        <p>$400/year</p>
+                        <button class="btn-benefit" data-level="silver">View Benefits</button>
+                    </div>
+                    <div class="benefit-card gold">
+                        <h3>Gold</h3>
+                        <p>$600/year</p>
+                        <button class="btn-benefit" data-level="gold">View Benefits</button>
+                    </div>
+                </div>
+                
+                <!-- Member Spotlights -->
+                <div class="member-spotlights">
+                    <h2>Featured Members</h2>
+                    <div id="spotlightContainer" class="spotlight-container"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Benefits Modal -->
+    <dialog id="benefitsModal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <h2 id="modalTitle">Membership Benefits</h2>
+            <div id="modalContent"></div>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="contact-info">
+            <p>Nigeria Chamber of Commerce</p>
+            <p>123 Main Street, Nigeria, ML 12345</p>
+            <p>info@Nigeriachamber.org</p>
+            <p>(555) 123-4567</p>
+        </div>
+        <div class="dev-info">
+            <p>&copy; <span id="year"></span> Nigeria Chamber</p>
+            <p>Samuel Oni</p>
+            <p>WDD 230 Project</p>
+            <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/join.js"></script>
+    <script>
+        // Set timestamp and footer dates
+        document.getElementById('timestamp').value = new Date().toISOString();
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
+</body>
+</html>

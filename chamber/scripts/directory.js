@@ -84,17 +84,17 @@ function renderMembers(members) {
     domElements.directory.innerHTML = members.map(member => `
         <div class="member-card">
             <img src="images/${member.image}" 
-                 alt="${member.name}" 
-                 loading="lazy"
-                 width="250" 
-                 height="150">
+                alt="${member.name}" 
+                loading="lazy"
+                width="250" 
+                height="150">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <a href="${member.url}" 
-               target="_blank" 
-               rel="noopener noreferrer">
-               Visit Website
+            target="_blank" 
+            rel="noopener noreferrer">
+            Visit Website
             </a>
             <span class="membership-level ${getMembershipClass(member.membership)}">
                 ${getMembershipText(member.membership)}

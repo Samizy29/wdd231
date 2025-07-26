@@ -1,5 +1,5 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&family=Montserrat:wght@500&display=swap');
 
 /* Base Styles */
 :root {
@@ -9,6 +9,7 @@
     --text-color: #212529;
     --background-color: #f8f9fa;
     --card-bg: #ffffff;
+    --error-color: #d32f2f;
 }
 
 * {
@@ -31,6 +32,13 @@ h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
     line-height: 1.2;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Header Styles */
@@ -109,6 +117,28 @@ main {
     flex-grow: 1;
 }
 
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 .view-toggle {
     margin: 1rem 0;
     display: flex;
@@ -135,6 +165,23 @@ main {
     background-color: var(--accent-color);
 }
 
+/* Card Styles */
+.member-card,
+.spotlight-card,
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.member-card:hover,
+.spotlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
 /* Directory Styles */
 #directory {
     display: grid;
@@ -145,19 +192,6 @@ main {
 
 #directory.list {
     display: block;
-}
-
-.member-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    padding: 1.25rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 #directory.grid .member-card {
@@ -175,7 +209,8 @@ main {
     margin-bottom: 1rem;
 }
 
-.member-card img {
+.member-card img,
+.spotlight-card img {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
@@ -191,17 +226,20 @@ main {
     flex-shrink: 0;
 }
 
-.member-card h3 {
+.member-card h3,
+.spotlight-card h2 {
     margin: 0.5rem 0;
     color: var(--primary-color);
 }
 
-.member-card p {
+.member-card p,
+.spotlight-card p {
     margin: 0.4rem 0;
     font-size: 0.9rem;
 }
 
-.member-card a {
+.member-card a,
+.spotlight-card a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 600;
@@ -210,12 +248,15 @@ main {
 }
 
 .member-card a:hover,
-.member-card a:focus {
+.member-card a:focus,
+.spotlight-card a:hover {
     text-decoration: underline;
     outline: none;
 }
 
-.membership-level {
+/* Membership Badges */
+.membership-level,
+.membership-badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     border-radius: 3px;
@@ -224,124 +265,22 @@ main {
     margin-top: 0.75rem;
 }
 
-.membership-level.gold {
+.gold {
     background-color: gold;
     color: #333;
 }
 
-.membership-level.silver {
+.silver {
     background-color: silver;
     color: #333;
 }
 
-.membership-level.bronze {
+.bronze {
     background-color: #cd7f32;
     color: white;
 }
 
-/* Footer Styles */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.dev-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        position: relative;
-    }
-    
-    .logo {
-        margin-bottom: 0.5rem;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    nav {
-        width: 100%;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        gap: 0.5rem;
-    }
-    
-    nav ul.show {
-        display: flex;
-        margin-top: 1rem;
-    }
-    
-    #hamburger {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-    }
-    
-    #directory.grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    #directory.list .member-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .member-card {
-        padding: 1rem;
-    }
-}
-
-/* Print Styles */
-@media print {
-    header, .view-toggle {
-        display: none;
-    }
-    
-    .member-card {
-        break-inside: avoid;
-        box-shadow: none;
-        border: 1px solid #ddd;
-    }
-    
-    footer {
-        border-top: 1px solid #000;
-    }
-}
-.error, .error-message {
-    color: #d32f2f;
-    padding: 1rem;
-    background: #ffebee;
-    border-radius: 4px;
-    text-align: center;
-}
-
-/* Additional style for home page */
-/* Home Page Specific Styles */
-/* Hero Container */
+/* Home Page Specific */
 .hero {
     display: flex;
     align-items: center;
@@ -356,7 +295,7 @@ footer {
 .hero-content h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
-    color: var(--primary);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -381,35 +320,6 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.btn-secondary {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-}
-
-
 /* Events Section */
 .events {
     background-color: var(--card-bg);
@@ -426,7 +336,7 @@ footer {
     background-color: var(--background-color);
 }
 
-/* weather */
+/* Weather Section */
 .weather {
     background-color: var(--background-color);
     padding: 1rem;
@@ -459,94 +369,374 @@ footer {
     height: 50px;
 }
 
-/* Spotlights Section */
-/* Spotlight Styles */
+/* Spotlight Section */
 .spotlight-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.spotlight-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #fff;
-    transition: transform 0.3s ease;
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.spotlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.spotlight-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 15px;
+.dev-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
 }
 
-.spotlight-card h2 {
-    margin: 0 0 10px 0;
-    color: #2c3e50;
-    font-size: 1.4rem;
-}
-
-.spotlight-card p {
-    margin: 8px 0;
-    color: #555;
-    line-height: 1.5;
-}
-
-.spotlight-card a {
-    color: #3498db;
-    text-decoration: none;
-    word-break: break-all;
-}
-
-.spotlight-card a:hover {
-    text-decoration: underline;
-}
-
-.membership-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.gold {
-    background-color: #ffd700;
-    color: #333;
-}
-
-.silver {
-    background-color: #c0c0c0;
-    color: #333;
-}
-
-/* Loading State */
+/* State Styles */
 .loading {
     text-align: center;
     padding: 40px;
     font-size: 1.2rem;
     color: #666;
-    grid-column: 1 / -1;
 }
 
-/* Error State */
+.error,
 .error-message {
+    color: var(--error-color);
+    padding: 1rem;
+    background: #ffebee;
+    border-radius: 4px;
     text-align: center;
-    padding: 40px;
-    color: #e74c3c;
-    font-size: 1.1rem;
-    grid-column: 1 / -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+    }
+    
+    .logo {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    
+    nav ul.show {
+        display: flex;
+        margin-top: 1rem;
+    }
+    
+    #hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+    
+    #directory.grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    #directory.list .member-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, .view-toggle {
+        display: none;
+    }
+    
+    .member-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    footer {
+        border-top: 1px solid #000;
+    }
+}
+
+/* Mobile Menu Button */
+#hamburger {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+#hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+#nav-menu {
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+    }
+    
+    #nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background: white;
+        transform: translateX(100%);
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    
+    #nav-menu.show {
+        transform: translateX(0);
+    }
+    
+    /* Hamburger to X animation */
+    #hamburger[aria-expanded="true"] .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    #hamburger[aria-expanded="true"] .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #hamburger[aria-expanded="true"] .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Join Page Specific Styles */
+.join-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.join-content {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .join-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.join-form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.join-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.join-form legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.join-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+input:invalid + .error-message,
+select:invalid + .error-message {
+    display: block;
+}
+
+/* Membership Benefits */
+.membership-benefits {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.benefits-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.benefit-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.benefit-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Membership Level Colors */
+.np {
+    border-left: 4px solid #2e7d32;
+    background-color: rgba(46, 125, 50, 0.1);
+}
+
+.bronze {
+    border-left: 4px solid #cd7f32;
+    background-color: rgba(205, 127, 50, 0.1);
+}
+
+.silver {
+    border-left: 4px solid #c0c0c0;
+    background-color: rgba(192, 192, 192, 0.1);
+}
+
+.gold {
+    border-left: 4px solid #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+/* Modal Styles */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Spotlight Members */
+.member-spotlights {
+    margin-top: 2rem;
+}
+
+.spotlight-container {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.spotlight-card {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Animations */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations with delays */
+.benefit-card:nth-child(1) {
+    animation: cardEntrance 0.6s ease-out 0.1s forwards;
+}
+.benefit-card:nth-child(2) {
+    animation: cardEntrance 0.6s ease-out 0.3s forwards;
+}
+.benefit-card:nth-child(3) {
+    animation: cardEntrance 0.6s ease-out 0.5s forwards;
+}
+.benefit-card:nth-child(4) {
+    animation: cardEntrance 0.6s ease-out 0.7s forwards;
 }
