@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nigeria Chamber of Commerce - Promoting local business growth and community development">
-    <title>Nigeria Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles/directory.css">
+    <title>Discover Nigeria | Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
     <link rel="icon" href="images/value.png">
 </head>
 <body>
@@ -16,24 +16,124 @@
             <h1>Nigeria Chamber of Commerce</h1>
         </div>
         <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav>
             <ul id="menu">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-
-
     
+    <main class="discover-container">
+        <h1>Discover Local Businesses</h1>
+        
+        <div class="visit-message">
+            <p id="visit-notification"></p>
+        </div>
+
+        <div class="demographics">
+            <h2>Business Community</h2>
+            <p>7 Featured Businesses</p>
+            <p>Gold Members: <span id="gold-count">3</span></p>
+            <p>Silver Members: <span id="silver-count">2</span></p>
+            <p>Bronze Members: <span id="bronze-count">2</span></p>
+        </div>
+
+        <div class="gallery" id="business-gallery">
+            <!-- Sample Business Cards (will be replaced by JavaScript) -->
+            <div class="member-card">
+                <img src="images/Sunrise Bakery.avif" alt="Sunrise Bakery" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level gold">GOLD</div>
+                    <h3>Sunrise Bakery</h3>
+                    <address>123 Main Street</address>
+                    <p>(555) 123-4567</p>
+                    <p>Fresh artisan breads and pastries made daily since 1985.</p>
+                    <a href="https://sunrisebakery.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/Downtown Cafe.avif" alt="Downtown Cafe" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level silver">SILVER</div>
+                    <h3>Downtown Cafe</h3>
+                    <address>456 Elm Avenue</address>
+                    <p>(555) 234-5678</p>
+                    <p>Cozy neighborhood cafe serving specialty coffee and light meals.</p>
+                    <a href="https://downtowncafe.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/city hardware.jpg" alt="City Hardware" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level bronze">BRONZE</div>
+                    <h3>City Hardware</h3>
+                    <address>789 Oak Road</address>
+                    <p>(555) 345-6789</p>
+                    <p>Your one-stop shop for all home improvement needs and tools.</p>
+                    <a href="https://cityhardware.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/Grand Hotel.avif" alt="Grand Hotel" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level gold">GOLD</div>
+                    <h3>Grand Hotel</h3>
+                    <address>101 Park Lane</address>
+                    <p>(555) 456-7890</p>
+                    <p>Luxury accommodations with premium amenities in the city center.</p>
+                    <a href="https://grandhotel.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/village pharmacy.jpg" alt="Village Pharmacy" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level bronze">BRONZE</div>
+                    <h3>Village Pharmacy</h3>
+                    <address>202 Maple Drive</address>
+                    <p>(555) 567-8901</p>
+                    <p>Full-service pharmacy with free delivery and health consultations.</p>
+                    <a href="https://villagepharmacy.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/Style salon.jpg" alt="Style Salon" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level silver">SILVER</div>
+                    <h3>Style Salon</h3>
+                    <address>303 Pine Street</address>
+                    <p>(555) 678-9012</p>
+                    <p>Professional hair styling and beauty services for all ages.</p>
+                    <a href="https://stylesalon.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/Fresh Market.avif" alt="Fresh Market" loading="lazy" width="300" height="200">
+                <div class="card-content">
+                    <div class="membership-level gold">GOLD</div>
+                    <h3>Fresh Market</h3>
+                    <address>404 Cedar Boulevard</address>
+                    <p>(555) 789-0123</p>
+                    <p>Locally-sourced produce, meats, and gourmet grocery items.</p>
+                    <a href="https://freshmarket.com" target="_blank" class="learn-more">Visit Website</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer>
         <div class="contact-info">
             <p>Nigeria Chamber of Commerce</p>
@@ -48,5 +148,31 @@
             <p>Last Modified: <span id="last-modified"></span></p>
         </div>
     </footer>
-    </body>
+
+    <script>
+        // Simple script to show last modified date
+        document.getElementById('last-modified').textContent = document.lastModified;
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Visit tracking
+        const visitNotification = document.getElementById('visit-notification');
+        const lastVisit = localStorage.getItem('lastVisit');
+        const currentVisit = new Date().getTime();
+
+        if (!lastVisit) {
+            visitNotification.textContent = "Welcome! Let us know if you have any questions.";
+        } else {
+            const daysSince = Math.floor((currentVisit - lastVisit) / (1000 * 60 * 60 * 24));
+            
+            if (daysSince < 1) {
+                visitNotification.textContent = "Back so soon! Awesome!";
+            } else {
+                visitNotification.textContent = `You last visited ${daysSince} day${daysSince === 1 ? '' : 's'} ago.`;
+            }
+        }
+
+        localStorage.setItem('lastVisit', currentVisit);
+    </script>
+    <script src="scripts/navigation.js"></script>
+</body>
 </html>

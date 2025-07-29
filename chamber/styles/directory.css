@@ -741,3 +741,126 @@ dialog::backdrop {
     animation: cardEntrance 0.6s ease-out 0.7s forwards;
 }
 /* Discover page*/
+/* Discover Page Specific Styles */
+.discover-container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.visit-message {
+    background-color: rgba(10, 147, 150, 0.1);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.demographics {
+    background-color: rgba(0, 95, 115, 0.1);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.demographics h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.demographics p {
+    margin: 0.5rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Membership level badges */
+.membership-level {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.member-card {
+    position: relative;
+}
+
+.member-card .card-content {
+    padding: 1.5rem;
+}
+
+.member-card .learn-more {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.member-card .learn-more:hover {
+    background-color: #d68a00;
+}
+
+@media (min-width: 641px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (hover: hover) {
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .discover-container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .visit-message, .demographics {
+        grid-column: 1;
+    }
+
+    .gallery {
+        grid-column: 2;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (hover: hover) {
+        .member-card:hover img {
+            filter: brightness(1.05);
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-areas: 
+    "card1 card2 card3"
+    "card4 card5 card6"
+    "card7 card8 ."; /* For desktop */
+}
+@media (min-width: 641px) {
+    .member-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+}
