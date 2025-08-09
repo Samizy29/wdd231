@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submitted</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Thank You!</h1>
+    <div id="form-results"></div>
+    <a href="index.html" class="btn">Return Home</a>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const resultsDiv = document.getElementById('form-results');
+      
+      params.forEach((value, key) => {
+        resultsDiv.innerHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+      });
+    });
+  </script>
+</body>
+</html>

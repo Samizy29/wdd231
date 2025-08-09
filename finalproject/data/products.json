@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "School Backpack",
+    "price": 29.99,
+    "category": "school",
+    "image": "images/backpack1.jpg",
+    "description": "Durable backpack with multiple compartments for books and laptops"
+  },
+  {
+    "id": 2,
+    "name": "Travel Duffel",
+    "price": 39.99,
+    "category": "travel",
+    "image": "images/duffel1.jpg",
+    "description": "Spacious duffel bag with wheels for easy travel"
+  },
+  {
+    "id": 3,
+    "name": "Laptop Bag",
+    "price": 24.99,
+    "category": "work",
+    "image": "images/laptop1.jpg",
+    "description": "Sleek professional bag with padded laptop compartment"
+  },
+  {
+    "id": 4,
+    "name": "Canvas Tote",
+    "price": 19.99,
+    "category": "casual",
+    "image": "images/tote1.jpg",
+    "description": "Lightweight tote bag perfect for everyday use"
+  },
+  {
+    "id": 5,
+    "name": "Hiking Backpack",
+    "price": 49.99,
+    "category": "travel",
+    "image": "images/backpack2.jpg",
+    "description": "Water-resistant backpack with hydration pack compartment"
+  }
+]

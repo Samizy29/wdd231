@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bamace Bag - Products</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <button class="nav-toggle">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Our Products</h1>
+    <div class="product-grid"></div>
+  </main>
+
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="">
+      <p id="modal-price"></p>
+      <p id="modal-description"></p>
+      <button id="add-favorite">Add to Favorites</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Bamace Bag</p>
+    <a href="https://youtube.com/shorts/6qzfsnRC5gc">Project Video</a>
+  </footer>
+
+  <script src="scripts/products.js" type="module"></script>
+</body>
+</html>
